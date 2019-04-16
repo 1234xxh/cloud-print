@@ -1,0 +1,44 @@
+<!--pages/list/list.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-pink" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 案例信息
+    </navigator>
+  </view>
+</view>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class='search-form round'>
+    <text class="icon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class='action'>
+    <button class='cu-btn bg-gradual-green shadow-blur round'>搜索</button>
+  </view>
+</view>
+<view class="cu-card case no-card" style="margin-top:{{34}}px;">
+<navigator hover-class='none' url="private?index={{index}}&&view={{item.view}}&nice={{item.nice}}&comment={{item.comment}}&info={{item.info}}&time={{item.time}}&pComment={{item.parentComment}}" class="cu-item shadow"  wx:for="{{lists}}" wx:key="{{index}}">
+  <!-- <view wx:for="{{lists}}" wx:key class="cu-item shadow"> -->
+    <view class='image'>
+      <image src="https://image.weilanwl.com/img/4x3-{{index%4+1}}.jpg" mode="widthFix"></image>
+      <view class="cu-tag {{item.levels > 3? 'bg-blue' : 'bg-orange'}}">{{item.level}}</view>
+      <view class='cu-bar bg-shadeBottom text-n'>{{item.info}}</view>
+    </view>
+    <view class="cu-list menu menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"></view>
+        <view class='content flex-sub'>
+          <view class='text-grey'>管理员</view>
+          <view class='text-gray text-sm flex justify-between'>
+            {{item.time}}
+            <view class="text-gray text-sm">
+              <text class="icon-attentionfill"></text> {{item.view}}
+              <text class="icon-appreciatefill"></text> {{item.nice}}
+              <text class="icon-messagefill"></text> {{item.comment}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  <!-- </view> -->
+ </navigator> 
+</view>

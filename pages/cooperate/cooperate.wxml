@@ -1,0 +1,16 @@
+<!--pages/cooperate/cooperate.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 合作信息
+    </navigator>
+  </view>
+</view>
+<view class="cu-timeline" wx:for="{{timeList}}" wx:key>
+  <view class="cu-time" wx:if="{{item.time}}">{{item.time}}</view>
+  <view class='cu-item cur icon-notice{{item.flag? "" : "_forbid_"}}fill text-{{item.color}}'>
+    <view class="content bg-{{item.color}} shadow-blur">
+      <text>{{item.times}}</text> 【{{item.local}}】 [{{item.student}}] 与 [{{item.parent}}] {{item.flag? "顺利达成合作" : "成功完成合作"}}
+    </view>
+  </view>
+</view>

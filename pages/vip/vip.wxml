@@ -1,0 +1,60 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 会员中心
+    </navigator>
+  </view>
+</view>
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class='tower-item {{item.zIndex==1?"none":""}}' wx:for="{{towerList}}" wx:key style='transform: scale({{0.66+item.zIndex/10}});margin-left:{{item.mLeft*100-150}}rpx;z-index:{{item.zIndex}}'>
+    <view class='bg-img shadow-blur' style="background-image:url({{item.url}})"></view>
+  </view>
+</view>
+<view class="cu-list grid col-{{gridCol}} no-border card-menu margin-top">
+  <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}">
+    <view class='icon-{{item.icon}} text-{{item.color}}'>
+      <view class="cu-tag badge" wx:if="{{item.badge!=0}}" >
+        <block wx:if="{{item.name == '等级'}}">VIP</block>
+        <block wx:if="{{item.badge!=1}}">{{item.badge>99?'99+':item.badge}}</block>
+      </view>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item arrow">
+    <view class='content'>
+      <text class='icon-activityfill text-orange'></text>
+      <text class='text-grey'>充值·优惠活动</text>
+    </view>
+    <view class='icon-hotfill text-red size-lg'></view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content'>
+      <text class='icon-goodsnewfill text-mauve'></text>
+      <text class='text-grey'>商城·新品上架</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content'>
+      <text class='icon-btn text-olive'></text>
+      <text class='text-grey'>特权·新增服务</text>
+    </view>
+  </view>
+  <view class="cu-item {{menuArrow?'arrow':''}}">
+    <view class='content'>
+      <text class='icon-emojiflashfill text-pink'></text>
+      <text class='text-grey'>当前特权</text>
+    </view>
+    <view class='action'>
+      <view class="cu-avatar-group">
+        <view class="cu-avatar round sm bg-green" ></view>
+        <view class="cu-avatar round sm bg-orange" ></view>
+        <view class="cu-avatar round sm bg-purple" ></view>
+        <view class="cu-avatar round sm bg-yellow" ></view>
+      </view>
+      <text class='text-grey text-sm'>4 项</text>
+    </view>
+  </view>
+</view>

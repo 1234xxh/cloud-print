@@ -1,0 +1,4 @@
+/* pages/cooperate/cooperate.wxss */
+.image-n {
+  display: flex
+}

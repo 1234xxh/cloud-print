@@ -1,0 +1,86 @@
+/* pages/home/home.wxss */
+/* 整个页面的底色 */
+page {
+  background-color: #f1f1f1;
+  background-size: 100%;
+}
+
+.DrawerPage {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0vw;
+  background-color: #f1f1f1;
+  transition: all 0.5s;
+}
+
+.DrawerPage.show {
+  transform: scale3d(0.9, 0.9, 0.9);
+  /* transform: translate(20px); */
+  left: 85vw;
+  transform-origin: 0;
+}
+
+.DrawerWindow {
+  position: absolute;
+  width: 85vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgb(196, 238, 183);
+  transform: scale(0.9, 0.9) translateX(-100%);
+  /* transform: translate(20px) translateX(-100%); */
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+.DrawerWindow.show {
+  transform: scale(1, 1) translateX(0%);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.DrawerClose {
+  position: absolute;
+  width: 40vw;
+  height: 100vh;
+  right: 0;
+  top: 0;  
+  color: transparent;
+  padding-bottom: 30rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;  
+  background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6));
+  letter-spacing: 5px;
+  font-size: 50rpx;  
+  opacity: 0;
+  pointer-events: none;  
+  transition: all 0.5s;
+}
+.DrawerClose.show {  
+  opacity: 1;
+  pointer-events: all;  
+  width: 15vw;
+  color: #fff;
+}
+.cu-list.card-menu-n {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.size-xll {
+  font-size: 46rpx;
+}
+.letf {
+  margin-left: 13%;
+}
+.right {
+  margin-left: 57%;
+}
+.container-ban{
+  height: 100%;
+  overflow: hidden;
+}

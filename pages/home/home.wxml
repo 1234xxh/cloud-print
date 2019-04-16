@@ -1,0 +1,72 @@
+<!--pages/home/home.wxml-->
+<view class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+  <view class='cu-custom' style="height:{{CustomBar}}px;">
+    <view class="cu-bar bg-gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <view class="text-center" style='width: 100rpx'>
+        <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn icon-my icon bg-gray shadow'> </button> -->
+        <!-- <block wx:else> -->
+          <view class="cu-avatar round" style="background-image:url({{userInfo.avatarUrl}})" bindtap="showModal" data-target="viewModal"></view>
+        <!-- </block> -->
+      </view>
+      <view class='content' style='top:{{StatusBar}}px;'>云打印</view>
+    </view>
+  </view>
+  <view style="top:{{CustomBar}}px;">
+    <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="4000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+      <swiper-item wx:for="{{4}}" wx:key class="{{cardCur==index?'cur':''}}">
+        <view class='bg-img shadow-blur' style="background-image:url(https://image.weilanwl.com/img/4x3-{{index+1}}.jpg)"></view>
+      </swiper-item>
+    </swiper>
+    <view class='nav-list'>
+      <navigator hover-class='none' url="../{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" style='animation: show {{(index+1)*0.2+1}}s 1;-webkit-animation: show {{(index+1)*0.2+1}}s 1;' wx:for="{{elements}}" wx:key>
+        <view class="nav-title">{{item.title}}</view>
+        <view class="nav-name">{{item.name}}</view>
+        <text class='icon-{{item.icon}}'></text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap='hideModal'>
+  <text class='icon-pullright'></text>
+</view>
+<view class="DrawerWindow {{modalName=='viewModal'?'show':''}}" catchtouchmove='true'>
+  <view class='padding-xl text-center text-white'>
+    <image src='/images/logo.png' class='response' mode='widthFix' style='width:200rpx;margin-top:100rpx'></image>
+    <view class='text-xl'>欢迎来到云打印
+    </view>
+  </view>
+  <view class="cu-list menu card-menu-n margin-top-xl margin-bottom-sm shadow-lg">
+    <view class="cu-item arrow">
+      <navigator class='content' url='../about/about/about' hover-class='none'>
+        <text class='icon-profile text-red'></text>
+        <text class='text-grey'>实名认证</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class='content' url='../vip/vip' hover-class='none'>
+        <text class='icon-medal text-orange'></text>
+        <text class='text-grey'>会员中心</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class='content' url='' hover-class='none'>
+        <text class='icon-comment text-green'></text>
+        <text class='text-grey'>交流社区</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class='content' url='' hover-class='none'>
+        <text class='icon-mark text-cyan'></text>
+        <text class='text-grey'>我的评价</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class='content' url='' hover-class='none'>
+        <text class='icon-phone text-orange'></text>
+        <text class='text-grey'>客服功能</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- <view class='cu-tabbar-height'></view> -->
+</view>

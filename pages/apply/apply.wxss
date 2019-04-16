@@ -1,0 +1,10 @@
+/* pages/apply/apply.wxss */
+/* .no-card-n {
+   margin: 30rpx 30rpx 0;
+  overflow: hidden;
+  border-radius: 10rpx;
+} */
+.cu-card.no-card-n>.cu-item {
+  margin: 3rpx 2rpx 1rpx 1rpx;
+  border-radius: 10rpx;
+}

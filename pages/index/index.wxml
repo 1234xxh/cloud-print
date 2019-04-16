@@ -1,0 +1,72 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>云打印</view>
+  </view>
+</view>
+<view class='PersonalCenter-bg'>
+  <image class='userInfo' src='{{userInfo.avatarUrl}}' mode="cover"></image>
+  <view class="gender {{index==1? 'icon-male bg-blue' : 'icon-female bg-pink'}}"></view>
+  <view class='text-xl'>
+    <text class='login'>{{userInfo.nickName}}</text>
+    <text class='text-df'> (学生)</text>
+    <text class="{{flag==0? 'icon-crownfill' : 'icon-crownfill-n'}}"></text>
+  </view>
+  <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-wave'></image>
+</view>
+<view class='padding flex text-center text-gray bg-white shadow-warp'>
+  <view class='flex flex-sub flex-direction solid-right'>
+    <view class="text-xxl text-orange">{{GoodsNum}}</view>
+    <view class="margin-top-sm">
+      <text class='icon-goodsfavor'></text> 我的订单</view>
+  </view>
+  <view class='flex flex-sub flex-direction solid-right'>
+    <view class="text-xxl text-blue">{{ReturnNum}}</view>
+    <view class="margin-top-sm">
+      <text class='icon-appreciate'></text> 我的信誉</view>
+  </view>
+  <view class='flex flex-sub flex-direction'>
+    <view class="text-xxl text-green">{{Money}}
+      <text class='text-df'> (云币)</text>
+    </view>
+    <view class="margin-top-sm">
+      <text class='icon-moneybag'></text> 我的钱包</view>
+  </view>
+</view>
+<view class="cu-list menu">
+  <view class="cu-item arrow">
+    <navigator class='content' url='../about/about/about' hover-class='none'>
+      <text class='icon-profile text-red'></text>
+      <text class='text-grey'>我的信息</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class='content' url='../vip/vip' hover-class='none'>
+      <text class='icon-medal text-orange'></text>
+      <text class='text-grey'>会员中心</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class='content' url='' hover-class='none'>
+      <text class='icon-comment text-green'></text>
+      <text class='text-grey'>交流社区</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="">
+      <text class='icon-mark text-red'></text>
+      <text class='text-grey'>我的评价</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class='content' url='' hover-class='none'>
+      <text class='icon-info text-orange'></text>
+      <text class='text-grey'>平台信息</text>
+    </navigator>
+    </view>
+    <view class="cu-item arrow">
+    <button class='cu-btn content' open-type='contact'>
+      <text class='icon-service text-orange'></text>
+      <text class='text-grey'>客服功能</text>
+    </button>
+    </view>
+</view>

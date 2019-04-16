@@ -1,0 +1,44 @@
+<!--pages/apply/apply.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;background-image:url(https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg);">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 求职信息
+    </navigator>
+  </view>
+</view>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class='search-form round'>
+    <text class="icon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class='action'>
+    <button class='cu-btn bg-gradual-green shadow-blur round'>搜索</button>
+  </view>
+</view>
+<view class="cu-card article no-card-n " style='margin-top: 45px;'>
+  <navigator hover-class='none' url="private?index={{index}}&name={{item.name}}&view={{item.view}}&nice={{item.nice}}&comment={{item.comment}}&info={{item.info}}&time={{item.time}}" class="cu-item shadow" style='animation: show {{(index+1)*0.2+1}}s 1;-webkit-animation: show {{(index+1)*0.2+1}}s 1;' wx:for="{{applyList}}" wx:key="{{index}}">
+    <view class="title">{{item.title}}</view>
+    <view class="content">
+      <image src="https://image.weilanwl.com/img/4x3-{{index%3+1}}.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class='text-content'> {{item.info}}</view>
+        <view class='text-sm'>
+          <text class='icon-locationfill text-gray margin-right'>{{item.location}}</text>
+          <text class='icon-timefill text-gray margin-left' style='position: absolute; right:35rpx;'> {{item.time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='text-sm' style="padding: 30rpx 0 0 30rpx;">
+          <view class='cu-tag bg-red light sm round' wx:if="{{item.num > 0}}">{{item.good[0]}}</view>
+          <view class='cu-tag bg-green light sm round' wx:if="{{item.num > 1}}">{{item.good[1]}}</view>
+          <view class='cu-tag bg-pink light sm round' wx:if="{{item.num > 2}}">{{item.good[2]}}</view>
+          <view class='cu-tag bg-blue light sm round' wx:if="{{item.num > 3}}">{{item.good[3]}}</view>
+        </view>
+    <view class='text-gray text-sm text-right' style="padding: 0rpx 25rpx;">
+      <text class="icon-attentionfill"></text> {{item.view}}
+      <text class="icon-appreciatefill"></text> {{item.nice}}
+      <text class="icon-messagefill"></text> {{item.comment}}
+    </view>
+  <!-- </view> -->
+  </navigator>
+</view>

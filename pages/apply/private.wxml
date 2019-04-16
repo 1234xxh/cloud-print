@@ -1,0 +1,59 @@
+<!--pages/apply/private.wxml-->
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;background-image:url(https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg);">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 详细信息
+    </navigator>
+  </view>
+</view>
+<view class="cu-card dynamic no-card">
+  <view wx:for="1" wx:key class="cu-item shadow">
+    <view class="cu-list menu menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/4x3-{{indexs%2+1}}.jpg);"></view>
+        <view class='content flex-sub'>
+          <view>{{name}}</view>
+          <view class='text-gray text-sm flex justify-between'>
+            {{time}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='text-content'>
+      {{info}}
+    </view>
+    <view class="grid {{isCard?'col-3 grid-square':'col-1'}} flex-sub padding-lr">
+      <view class="bg-img {{isCard?'':'only-img'}}" style="background-image:url(https://image.weilanwl.com/img/4x3-{{index%3+1}}.jpg);" wx:for="{{isCard?9:1}}" wx:key>
+      </view>
+    </view>
+    <view class='text-gray text-sm text-right padding'>
+      <text class="icon-attentionfill"></text> {{view}}
+      <text class="icon-appreciatefill"></text> {{nice}}
+      <text class="icon-messagefill"></text> {{comments}}
+    </view>
+    <view class="cu-list menu menu-avatar comment solids-top">
+      <view class="cu-item" wx:for="{{3}}" wx:key>
+        <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+        <view class='content'>
+          <view class='text-grey'>路人{{index+1}}</view>
+          <view class='text-gray text-content text-df'>
+            踩一踩！！
+          </view>
+          <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+            <view class="flex {{index!=0?'margin-top-sm':'' }}" wx:for="{{2}}" wx:key>
+              <view>我：</view>
+              <view class='flex-sub'>哈哈哈哈！</view>
+            </view>
+          </view>
+          <view class='margin-top-sm flex justify-between'>
+            <view class='text-gray text-df'>{{time}}</view>
+            <view>
+              <text class="icon-appreciate{{!isZan?'fill':''}} text-{{!isZan?'red':'gray'}}"></text>
+              <text class="icon-messagefill text-gray margin-left-sm"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

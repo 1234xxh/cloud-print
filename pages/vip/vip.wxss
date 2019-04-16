@@ -1,0 +1,7 @@
+/* pages/vip/vip.wxss */
+.size-lg {
+  font-size: 40rpx;
+}
+.size-sm {
+  font-size: 33rpx;
+}
